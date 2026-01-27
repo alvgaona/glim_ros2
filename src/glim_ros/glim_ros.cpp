@@ -1,11 +1,7 @@
-#include <glim_ros/glim_ros.hpp>
+#include "glim_ros/glim_ros.hpp"
 
 #define GLIM_ROS2
 
-#include <deque>
-#include <thread>
-#include <iostream>
-#include <functional>
 #include <boost/format.hpp>
 #include <spdlog/spdlog.h>
 #include <spdlog/sinks/basic_file_sink.h>
