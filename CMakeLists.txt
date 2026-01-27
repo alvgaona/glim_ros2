@@ -17,6 +17,7 @@ ament_auto_find_build_dependencies()
 
 find_package(glim REQUIRED)
 find_package(Boost REQUIRED COMPONENTS program_options)
+find_package(Python3 REQUIRED COMPONENTS Development)
 
 if(DEFINED GLIM_USE_OPENCV AND NOT GLIM_USE_OPENCV AND BUILD_WITH_CV_BRIDGE)
   message(WARNING "BUILD_WITH_CV_BRIDGE is disabled because glim is not built with OpenCV.")
@@ -61,6 +62,7 @@ ament_auto_add_executable(glim_rosnode
 )
 target_link_libraries(glim_rosnode
   glim_ros
+  Python3::Python
 )
 
 ### glim_rosbag ###
@@ -69,6 +71,7 @@ ament_auto_add_executable(glim_rosbag
 )
 target_link_libraries(glim_rosbag
   glim_ros
+  Python3::Python
 )
 
 ### validator_node ###
@@ -77,6 +80,7 @@ ament_auto_add_executable(validator_node
 )
 target_link_libraries(validator_node
   glim_ros
+  Python3::Python
 )
 
 if(BUILD_WITH_VIEWER)
